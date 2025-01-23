@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atlcd.chinesechessback.mapper.GameMapper">
+
+    <resultMap id="BaseResultMap" type="com.atlcd.chinesechessback.pojo.entity.Game">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="red" column="red" jdbcType="VARCHAR"/>
+            <result property="black" column="black" jdbcType="VARCHAR"/>
+            <result property="result" column="result" jdbcType="INTEGER"/>
+            <result property="winner" column="winner" jdbcType="VARCHAR"/>
+            <result property="loser" column="loser" jdbcType="VARCHAR"/>
+            <result property="reason" column="reason" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,red,black,
+        result,winner,loser,
+        reason
+    </sql>
+</mapper>

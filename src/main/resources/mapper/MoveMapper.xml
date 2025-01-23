@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atlcd.chinesechessback.mapper.MoveMapper">
+
+    <resultMap id="BaseResultMap" type="com.atlcd.chinesechessback.pojo.entity.Move">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="gameId" column="game_id" jdbcType="INTEGER"/>
+            <result property="step" column="step" jdbcType="INTEGER"/>
+            <result property="movePiece" column="move_piece" jdbcType="VARCHAR"/>
+            <result property="eatPiece" column="eat_piece" jdbcType="VARCHAR"/>
+            <result property="fromX" column="from_x" jdbcType="INTEGER"/>
+            <result property="fromY" column="from_y" jdbcType="INTEGER"/>
+            <result property="toX" column="to_x" jdbcType="INTEGER"/>
+            <result property="toY" column="to_y" jdbcType="INTEGER"/>
+            <result property="message" column="message" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,game_id,step,
+        move_piece,eat_piece,from_x,
+        from_y,to_x,to_y,
+        message
+    </sql>
+</mapper>

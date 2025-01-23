@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://${lcd.datasource.host}:${lcd.datasource.port}/${lcd.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: ${lcd.datasource.username}
+      password: ${lcd.datasource.password}
+  data:
+    redis:
+      host: ${lcd.redis.host}
+      port: ${lcd.redis.port}
+      database: ${lcd.redis.database}
+      password: ${lcd.redis.password}
+
+mybatis-plus:
+  type-aliases-package: lcd.entity
+  global-config:
+    db-config:
+      id-type: auto
+    configuration:
+      # 启用自动驼峰转换
+      map-underscore-to-camel-case: true
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: lcd.controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+lcd:
+  cors:
+    # 允许跨域的域名
+    allow-origins:
+      - http://hustcchess.xyz
+  jwt:
+    user-secret-key: ${lcd.jwt.user-secret-key}
+    user-ttl-hours: ${lcd.jwt.user-ttl-hours}
+    user-token-name: ${lcd.jwt.user-token-name}
+  stomp:
+    disconnectDelay: 900 # 30 * 30
+    httpMessageCacheSize: 1000
+    streamBytesLimit: 524288 # 512 * 1024
