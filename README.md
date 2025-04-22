@@ -1,6 +1,10 @@
-# 软件工程项目——中国象棋
+# 棋弈乾坤——基于SpringBoot+Vue的实时象棋对弈平台
 
-华中科技大学2022届软件工程项目——中国象棋，后端部分，前端项目地址https://github.com/leicd458/My-CChess-Front
+中国大学生计算机设计大赛项目：
+
+棋弈乾坤——基于SpringBoot+Vue的实时象棋对弈平台
+
+后端部分，前端项目地址https://github.com/Jackiepeachhh/QiYiQianKun-Front
 
 ## 框架
 
